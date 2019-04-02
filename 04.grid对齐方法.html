@@ -5,12 +5,22 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>grid对齐方法</title>
 		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			body {
+				height: 100vh;
+				width: 100vw;
+			}
 			.item {
 				font-size: 3em;
-				line-height: 3rem;
-				text-align: center;
+				/* line-height: 3rem; */
+				/* text-align: center; */
 				border: 1px solid #e5e4e9;
 				box-sizing: border-box;
+				/* width: 100%; */
+				/* height: 100%; */
 			}
 			#container {
 				display: grid;
@@ -23,7 +33,7 @@
 				/* align-content: start | end | center | stretch | space-around | space-between | space-evenly; */
 
 				/* justify-content: center; */
-				/* align-content: center; */
+				align-content: center;
 
 				/* place-content属性是align-content属性和justify-content属性的合并简写形式。 */
 				/* place-content: end end; */
@@ -37,28 +47,38 @@
 				/* align-items: start; */
 
 				/* place-items属性是align-items属性和justify-items属性的合并简写形式。 */
-				/* place-items: start end; */
+				/* place-items: end end; */
 			}
 
-			/* justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。 */
-			/* align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。 */
-			/* .item-1 {
-					justify-self: start | end | center | stretch;
-					align-self: start | end | center | stretch;
-				} */
 			.item-1 {
+				/* justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。 */
+				/* align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。 */
+				/* justify-self: start | end | center | stretch; */
+				/* align-self: start | end | center | stretch; */
 				/* justify-self: start; */
 				/* align-self: end; */
 
 				/* place-self属性是align-self属性和justify-self属性的合并简写形式。 */
 				/* place-self: <align-self> <justify-self>; */
-				place-self: center center;
+				place-self: end center;
+			}
+			.item-1 span {
+				display: block;
+				width: 40px;
+				height: 40px;
+				text-align: center;
+				font-size: 30px;
+			}
+			.item-2 {
+				width: 50px;
+				height: 50px;
+				place-self: end end;
 			}
 		</style>
 	</head>
 	<body>
 		<div id="container">
-			<div class="item item-1" style="background:#ef342a;">1</div>
+			<div class="item item-1" style="background:#ef342a;"><span>1</span></div>
 			<div class="item item-2" style="background:#f68f26;">2</div>
 			<div class="item item-3" style="background:#4ba946;">3</div>
 			<div class="item item-4" style="background:#0376c2;">4</div>
