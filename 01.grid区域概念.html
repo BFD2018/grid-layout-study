@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Grid区域概念</title>
+		<style>
+			.item {
+				font-size: 4em;
+				text-align: center;
+				border: 1px solid #e5e4e9;
+				box-sizing: border-box;
+			}
+
+			#container {
+				display: grid;
+				grid-template-columns: 100px 100px 100px;
+				grid-template-rows: 100px 100px 100px;
+
+				/* 网格布局允许指定"区域"（area），一个区域由单个或多个单元格组成。grid-template-areas属性用于定义区域。 */
+				grid-template-areas:
+					'a b c'
+					'd e f'
+					'g h i';
+
+				/* 多个单元格合并成一个区域的写法如下。 */
+				/* grid-template-areas:
+					'a a a'
+					'b b b'
+					'c c c'; */
+
+				/* grid-template-areas:
+					'header header header'
+					'main main sidebar'
+					'footer footer footer'; */
+
+				/* 如果某些区域不需要利用，则使用"点"（.）表示 */
+				/* grid-template-areas:
+					'a . c'
+					'd . f'
+					'g . i'; */
+
+				/* 注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。 */
+			}
+
+			/* grid-area属性指定项目放在哪一个区域。 */
+			/* .item-1 {
+				grid-area: c;
+			} */
+
+			/* grid-area属性还可用作grid-row-start、grid-column-start、grid-row-end、grid-column-end的合并简写形式，直接指定项目的位置。 */
+			/* .item {
+				grid-area: <row-start> / <column-start> / <row-end> / <column-end>;
+			} */
+			/* .item-1 {
+				grid-area: 1 / 1 / 3 / 3;
+			} */
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="item item-1" style="background:#ef342a;">1</div>
+			<div class="item item-2" style="background:#f68f26;">2</div>
+			<div class="item item-3" style="background:#4ba946;">3</div>
+			<div class="item item-4" style="background:#0376c2;">4</div>
+			<div class="item item-5" style="background:#c077af;">5</div>
+			<div class="item item-6" style="background:#f8d29d;">6</div>
+			<div class="item item-7" style="background:#b5a87f;">7</div>
+			<div class="item item-8" style="background:#d0e4a9;">8</div>
+			<div class="item item-9" style="background:#4dc7ec;">9</div>
+		</div>
+	</body>
+</html>
